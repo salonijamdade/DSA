@@ -29,10 +29,10 @@ for i in arr:
  
 
 
-print(l1)
-print(l2)
+print("maximun number",l1)
+print("second maximum number",l2)
 
 
 
-print(s1)
-print(s2)
+print("minimum number",s1)
+print("second minimum number",s2)

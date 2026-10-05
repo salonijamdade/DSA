@@ -1,4 +1,4 @@
-n=int(input("enter size of array"))
+n=int(input("enter any number"))
 
 
 cube=(n*(n+1)//2)**2
