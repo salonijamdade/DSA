@@ -16,11 +16,17 @@ class LinkedList:
             temp.next=new_node
 
     def display(self):
+        count=0
+        sum=0
         temp=self.head
         while temp is not None:
-            print(temp.data)
+            count=count+1
+            if temp.data%2==0:
+                print(temp.data)
+            sum=sum+temp.data
             temp=temp.next
-
+        print(count)
+        print(sum)
 
 list=LinkedList()
 n1=node(10)

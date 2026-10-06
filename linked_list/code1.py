@@ -14,6 +14,7 @@ new.next=node1
 node1=new
 
 
+
 while node1 is not None:
     print(node1.data)
     node1=node1.next
