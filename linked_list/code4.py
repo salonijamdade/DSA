@@ -21,8 +21,6 @@ class LinkedList:
         temp=self.head
         while temp is not None:
             count=count+1
-            if temp.data%2==0:
-                print(temp.data)
             sum=sum+temp.data
             temp=temp.next
         print(count)
