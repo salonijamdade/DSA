@@ -26,7 +26,6 @@ class linked_list:
             self.head = new_node
         else:
             p = 1
-            #temp = self.head
             while (p != pos - 1 and temp.next!=None):
                 temp = temp.next
                 p += 1
