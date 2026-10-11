@@ -9,7 +9,7 @@ class linkedlist:
 
     def append(self,new_node):
         if self.head==None:
-            self.node=new_node
+            self.head=new_node
         else:
             temp=self.head
             while temp.next!=None:
@@ -82,7 +82,12 @@ list.append(n4)
 
 
 list.display()
-
+print("after delete")
+list.delete(1)
+list.display()
+print("after insert")
+list.insert(node(1),1)
+list.display()
         
 
             
