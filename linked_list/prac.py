@@ -151,6 +151,17 @@ class linkedlist:
 
 
 
+    def concat_two_list(self, list1):
+        if self.head == None:
+            self.head = list1.head
+            return
+
+        temp = self.head
+
+        while temp.next != None:
+            temp = temp.next
+
+        temp.next = list1.head
 
         
 
@@ -166,6 +177,7 @@ class linkedlist:
 
 
 list = linkedlist()
+list1=linkedlist()
 
 n1 = node(1)
 n2 = node(2)
@@ -186,20 +198,30 @@ list.insert(node(4), 2)
 #print("After deleting 2:")
 #list.display()
 
-list.insert(node(6), 5)
-list.insert(node(7), 6)
-list.insert(node(7), 7)
+#list.insert(node(6), 5)
+#list.insert(node(7), 6)
+#list.insert(node(7), 7)
 
+n4 = node(10)
+n5 = node(20)
+n6 = node(30)
+
+list1.append(n4)
+list1.append(n5)
+list1.append(n6)
+
+
+list.concat_two_list(list1)
 list.display()
 
-list.middle()
-print("after deleting middle node")
-list.display()
+#list.middle()
+#print("after deleting middle node")
+#list.display()
 
 #list.delfirst_last()
-list.alt_node_del()
-print("after alt deleting node")
-list.display()
+#list.alt_node_del()
+#print("after alt deleting node")
+#list.display()
 
 #list.sum_consecutive()
 
