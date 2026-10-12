@@ -89,15 +89,70 @@ class linkedlist:
         self.head = prev
 
     def middle(self):
-        slow=self.head
-        fast=self.head
+        temp=temp1=self.head
+        prev=None
+        while temp1 and temp1.next:
+            prev=temp
+            temp=temp.next
+            temp1=temp1.next.next
 
-        while fast!=None and fast.next!=None:
-            slow=slow.next
-            fast=fast.next.next
+        print("middle node:",temp.data)
+        prev.next=temp.next
+        temp=None
 
-        if slow!=None:
-            print("middle node",slow.data)
+        #slow=self.head
+        #fast=self.head
+
+        #while fast!=None and fast.next!=None:
+        #    slow=slow.next
+        #    fast=fast.next.next
+
+        #if slow!=None:
+        #    print("middle node",slow.data)
+        
+
+
+    def delfirst_last(self):
+        #if self.head==None:
+        #    print("list is empty")
+        #    return
+        
+        #if self.head.next==None:
+        #    self.head=None
+        #    return
+
+        #temp=self.head
+
+        #while temp.next.next!=None:
+        #    temp=temp.next 
+
+        #temp.next=None
+
+       temp1=self.head
+       temp1=None
+       prev=None
+       temp=self.head=self.head.next.next 
+       while(temp.next):
+           prev=temp
+           temp=temp.next 
+       prev.next=None
+       temp=None
+
+    def alt_node_del(self):
+        prev=self.head
+        temp=self.head.next
+
+        while prev and temp: 
+            prev.next=temp.next
+            temp=None #delete the node
+            prev=prev.next 
+            if prev:
+                temp=prev.next
+
+
+
+
+        
 
     def sum_consecutive(self):
         temp=self.head
@@ -138,8 +193,15 @@ list.insert(node(7), 7)
 list.display()
 
 list.middle()
+print("after deleting middle node")
+list.display()
 
-list.sum_consecutive()
+#list.delfirst_last()
+list.alt_node_del()
+print("after alt deleting node")
+list.display()
+
+#list.sum_consecutive()
 
 #list.reverse()
 #print("After reversing:")
