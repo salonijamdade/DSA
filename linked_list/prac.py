@@ -152,16 +152,16 @@ class linkedlist:
 
 
     def concat_two_list(self, list1):
-        if self.head == None:
-            self.head = list1.head
+        if self.head==None:
+            self.head=list1.head
             return
 
-        temp = self.head
+        temp=self.head
 
-        while temp.next != None:
-            temp = temp.next
+        while temp.next!=None:
+            temp=temp.next
 
-        temp.next = list1.head
+        temp.next=list1.head
 
         
 
