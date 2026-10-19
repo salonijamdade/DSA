@@ -57,6 +57,26 @@ class linkedlist:
             print(temp.data, end=" ")
             temp=temp.prev
 
+    def delete(self,value):
+            temp=self.head
+            prev=None
+            #deleting first node
+            if temp.data==value:
+                self.head=self.head.next
+                self.head.prev=None
+                return
+            while (temp):            #searching value
+                if temp.data==value:
+                    break
+                else:                #traverse
+                    prev=temp
+                    temp=temp.next
+    
+            if temp==None:
+                print("value is not in the list")
+                return
+            prev.next=temp.next
+            temp=None
 
     def display(self):
         temp = self.head
