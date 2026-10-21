@@ -13,69 +13,68 @@ class linked_list:
             while temp.next:
                 temp=temp.next
             temp.next=new_node
+
     def insert(self,new_node,pos):
         if pos==1:
-            new_node.next=self.head
             self.head=new_node
             return
         temp=self.head
         p=1
         while p<pos-1 and temp.next:
             temp=temp.next
-            p+=1
-        new_node.next=temp.next
         temp.next=new_node
+        new_node.next=temp
 
     def delete(self,value):
         temp=self.head
         if temp==None:
             print("list is empty")
-            return
-        
         if temp==value:
             self.head=temp.next
-            return
         prev=temp
         temp=temp.next
         while temp:
             if temp.data==value:
                 prev.next=temp.next
-                return
+                temp=None
             prev=temp
             temp=temp.next
-    def del_alt(self):
+
+    def alt_del(self):
+        temp=self.head
+        if temp==None:
+            print("list is empty")
         prev=self.head
         temp=self.head.next
-        while prev and temp:
+        while temp:
             prev.next=temp.next
             temp=None
             prev=prev.next
             if prev:
                 temp=prev.next
-        
+
 
     def display(self):
-        temp=self.head
-        if temp==None:
+        if self.head==None:
             print("list is empty")
+        temp=self.head
         while temp:
             print(temp.data)
             temp=temp.next
 
-
 list=linked_list()
-n1=node(1)
-n2=node(2)
-n3=node(3)
-n4=node(4)
-n5=node(5)
-list.append(n1)
-list.append(n2)
-list.append(n3)
-list.append(n4)
-list.append(n5)
+node1=node(1)
+node2=node(2)
+node3=node(3)
+node4=node(4)
+node5=node(5)
+
+list.append(node1)
+list.append(node2)
+list.append(node3)
+list.append(node4)
+list.append(node5)
+
 list.display()
-#list.delete(2)
-#list.display()
-list.del_alt()
+list.alt_del()
 list.display()
