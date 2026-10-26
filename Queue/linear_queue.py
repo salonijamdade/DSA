@@ -1,4 +1,3 @@
-
 class node:
     def __init__(self, value):
         self.data = value
@@ -10,9 +9,9 @@ class LQueue:
         self.front = self.rear = None
 
     def enqueue(self, new_node):
-        if self.rear == None:  # Queue is empty
+        if self.rear == None:  # when Queue is empty
             self.front = self.rear = new_node
-        else:                  # Queue is not empty
+        else:                  # whe Queue is not empty
             self.rear.next = new_node
             self.rear = new_node
 
@@ -25,7 +24,7 @@ class LQueue:
         print("Deleted:", temp.data)
         self.front = self.front.next
 
-        if self.front ==None:
+        if self.front==None:
             print("queue is empty now")
             self.rear = None
 
