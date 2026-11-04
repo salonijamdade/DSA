@@ -59,20 +59,14 @@ class Stack:
         self.top = s2.top
         print("Stack reversed successfully")
 
-
 st = Stack()
-
 st.push(Node(10))
 st.push(Node(20))
 st.push(Node(30))
 st.push(Node(40))
-
 st.display()
-
 st.pop()
 st.display()
-
 st.reverse_string("Saloni")
-
 st.reverse_stack()
 st.display()
