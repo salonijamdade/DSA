@@ -26,13 +26,13 @@ class BST:
                     else:
                         temp=temp.right
 
-def inorder(temp): #root is copied into the temp variable and then we check if temp is None or not. If it is None then we return else we print the left subtree, root and right subtree.
-    if temp==None:
-        return
-    else:
-        inorder(temp.left)
-        print(temp.data,end=" ")
-        inorder(temp.right)
+    def inorder(self,temp): #root is copied into the temp variable and then we check if temp is None or not. If it is None then we return else we print the left subtree, root and right subtree.
+        if temp==None:
+            return
+        else:
+            self.inorder(temp.left)
+            print(temp.data,end=" ")
+            self.inorder(temp.right)
 
 btree=BST()
 btree.insert(node(10))
@@ -41,6 +41,6 @@ btree.insert(node(90))
 btree.insert(node(40))
 btree.insert(node(70))
 btree.insert(node(55))
-inorder(btree.root)
+btree.inorder(btree.root)
 
 
