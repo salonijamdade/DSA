@@ -34,6 +34,20 @@ class BST:
             self.inorder(temp.left)
             print(temp.data,end=" ")
             self.inorder(temp.right)
+    def preorder(self,temp):
+        if temp==None:
+            return
+        else:
+            print(temp.data,end=" ")
+            self.preorder(temp.left)
+            self.preorder(temp.right)  
+    def postorder(self,temp):
+        if temp==None:
+            return
+        else:
+            self.postorder(temp.left)
+            self.postorder(temp.right) 
+            print(temp.data,end=" ")     
 
 btree=BST()
 btree.insert(node(10))
@@ -43,3 +57,7 @@ btree.insert(node(40))
 btree.insert(node(70))
 btree.insert(node(55))
 btree.inorder(btree.root)
+print()
+btree.preorder(btree.root)
+print()
+btree.postorder(btree.root)
