@@ -47,7 +47,20 @@ class BST:
         else:
             self.postorder(temp.left)
             self.postorder(temp.right) 
-            print(temp.data,end=" ")     
+            print(temp.data,end=" ") 
+    def searching(self,value):
+        temp=self.root
+        while temp!=None:
+            if value==temp.data:
+                print("element found")
+                return
+            elif value<temp.data:
+                temp=temp.left
+            else:
+                temp=temp.right
+        print("element not found")    
+
+    
 
 btree=BST()
 btree.insert(node(10))
@@ -61,3 +74,4 @@ print()
 btree.preorder(btree.root)
 print()
 btree.postorder(btree.root)
+btree.searching(300)
