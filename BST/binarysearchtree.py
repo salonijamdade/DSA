@@ -105,34 +105,46 @@ class BST:
         while temp.left!=None:
             temp=temp.left
         return temp   
-    # def search(self,value):
-    #     temp=self.root
-    #     while temp:
-    #         if value.data==temp:
-    #             # print("element found")
-    #             return True
-    #         elif value<temp.data:
-    #             temp=temp.left
-    #         else:
-    #             temp=temp.right
-    #     # print("element not found")
-    #     return False
+    
+    def level_order(self,rt):
+        if rt is None:
+            print("bst is emoty")
+            return
+        arr=[]
+        count=0 #for counting the visited nodes
+        arr.append(rt)
+        while count<len(arr):
+            temp=arr[count] #add the nodes to the array
+            count+=1 #increase the counter of the visted nodes
+            print(temp.data,end=" ")
+            if temp.left:
+                arr.append(temp.left) # add the left node of the root
+            if temp.right:
+                arr.append(temp.right) #add the right node of the root
+
+
+
+
+        
+
+
 
 
 
 btree=BST()
-btree.insert(node(10))
-btree.insert(node(20))
+btree.insert(node(100))
+btree.insert(node(120))
 btree.insert(node(90))
-btree.insert(node(40))
-btree.insert(node(70))
+btree.insert(node(440))
+btree.insert(node(10))
 btree.insert(node(55))
-btree.inorder(btree.root)
+# btree.inorder(btree.root)
 # btree.root=btree.delete(btree.root,40)
 # print("after deleteing")
 # btree.inorder(btree.root)
 # btree.min()
-btree.search(90)
+# btree.search(90)
+btree.level_order(btree.root)
 
 
 

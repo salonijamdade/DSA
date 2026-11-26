@@ -6,7 +6,6 @@ class node:
 class BST:
     def __init__(self):
         self.root=None
-
     def insert(self,new_node):
         if self.root==None:
             self.root=new_node
@@ -14,41 +13,43 @@ class BST:
         else:
             temp=self.root
             while True:
-                if new_node.data <= temp.data :
+                if new_node.data<temp.data:
                     if temp.left==None:
                         temp.left=new_node
                         return
                     else:
                         temp=temp.left
-
                 else:
                     if temp.right==None:
                         temp.right=new_node
                         return
                     else:
                         temp=temp.right
+
     def inorder(self,temp):
-        if temp==None:
+        if temp ==None:
             return
         else:
             self.inorder(temp.left)
             print(temp.data,end=" ")
             self.inorder(temp.right)
-    def preorder(self,temp):
-        if temp==None:
-            return
-        else:
-            print(temp.data,end=" ")
-            self.preorder(temp.left)
-            self.preorder(temp.right)  
     def postorder(self,temp):
-        if temp==None:
+        if temp ==None:
             return
         else:
-            self.postorder(temp.left)
-            self.postorder(temp.right) 
-            print(temp.data,end=" ") 
-    def searching(self,value):
+            self.inorder(temp.left)
+            
+            self.inorder(temp.right)
+            print(temp.data,end=" ")
+    def preorder(self,temp):
+        if temp ==None:
+            return
+        else:
+            
+            print(temp.data,end=" ")
+            self.inorder(temp.left)
+            self.inorder(temp.right)
+    def search(self,value):
         temp=self.root
         while temp!=None:
             if value==temp.data:
@@ -58,20 +59,38 @@ class BST:
                 temp=temp.left
             else:
                 temp=temp.right
-        print("element not found")    
+        print("element not found")
+
+    def minmax(self):
+        temp=self.root
+        while temp.left!=None:
+            temp=temp.left
+        print("minimum",temp.data)
+
+        temp=self.root
+        while temp.right!=None:
+            temp=temp.right
+        print("maximum",temp.data)
 
     
 
-btree=BST()
-btree.insert(node(10))
-btree.insert(node(20))
-btree.insert(node(90))
-btree.insert(node(40))
-btree.insert(node(70))
-btree.insert(node(55))
-btree.inorder(btree.root)
+
+
+bt=BST()
+bt.insert(node(10))
+bt.insert(node(50))
+bt.insert(node(30))
+bt.insert(node(80))
+bt.insert(node(20))
+bt.inorder(bt.root)
 print()
-btree.preorder(btree.root)
+bt.postorder(bt.root)
 print()
-btree.postorder(btree.root)
-btree.searching(300)
+bt.preorder(bt.root)
+print()
+bt.search(20)
+print()
+bt.minmax()
+
+
+                
