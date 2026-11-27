@@ -112,23 +112,23 @@ class BST:
             return
         arr=[]
         count=0 #for counting the visited nodes
+        level=0
         arr.append(rt)
         while count<len(arr):
-            temp=arr[count] #add the nodes to the array
-            count+=1 #increase the counter of the visted nodes
-            print(temp.data,end=" ")
-            if temp.left:
-                arr.append(temp.left) # add the left node of the root
-            if temp.right:
-                arr.append(temp.right) #add the right node of the root
+            nodes=len(arr)-count
+            print("\nlevel",level,end=" ")
+            for i in range(nodes):
+                temp=arr[count] #add the nodes to the array,takes the temp value according to the count value
+                count+=1 #increase the counter of the visted nodes
+                print(temp.data,end=" ")
+                if temp.left:
+                    arr.append(temp.left) # add the left node of the root
+                if temp.right:
+                    arr.append(temp.right) #add the right node of the root
+            level+=1
 
-
-
-
+        print("height of the tree",level)
         
-
-
-
 
 
 btree=BST()
@@ -138,6 +138,9 @@ btree.insert(node(90))
 btree.insert(node(440))
 btree.insert(node(10))
 btree.insert(node(55))
+btree.insert(node(9))
+btree.insert(node(77))
+btree.insert(node(50))
 # btree.inorder(btree.root)
 # btree.root=btree.delete(btree.root,40)
 # print("after deleteing")
@@ -145,6 +148,7 @@ btree.insert(node(55))
 # btree.min()
 # btree.search(90)
 btree.level_order(btree.root)
+# print("print height of the tree")
 
 
 

@@ -72,7 +72,35 @@ class BST:
             temp=temp.right
         print("maximum",temp.data)
 
+        def get_successor(self,temp):
+        temp=temp.right
+        while temp.left!=None:
+            temp=temp.left
+        return temp   
     
+    def level_order(self,rt):
+        if rt is None:
+            print("bst is emoty")
+            return
+        arr=[]
+        count=0 #for counting the visited nodes
+        level=0
+        arr.append(rt)
+        while count<len(arr):
+            nodes=len(arr)-count
+            print("\nlevel",level,end=" ")
+            for i in range(nodes):
+                temp=arr[count] #add the nodes to the array,takes the temp value according to the count value
+                count+=1 #increase the counter of the visted nodes
+                print(temp.data,end=" ")
+                if temp.left:
+                    arr.append(temp.left) # add the left node of the root
+                if temp.right:
+                    arr.append(temp.right) #add the right node of the root
+            level+=1
+
+        print("height of the tree",level)
+        
 
 
 
@@ -91,6 +119,6 @@ print()
 bt.search(20)
 print()
 bt.minmax()
-
+bt.level_order(bt.root)
 
                 
